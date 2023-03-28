@@ -1,0 +1,30 @@
+<div class="home-container">
+  
+  <div class="page-container">
+    <h1>Home</h1>
+  
+    <div class="searcher">
+        <input id="searchInput" type="text" [(ngModel)]="newSearch" (keydown)="pressEnter($event)">
+        <button (click)="search()" mat-flat-button color="warn">Buscar</button>
+        
+    </div>
+    
+        <mat-card class="example-card" *ngFor="let product of products?.results">
+            <mat-card-header>            
+              <mat-card-title>{{product.title}}</mat-card-title>
+              <mat-card-subtitle style="color: orange;">{{product.condition}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{product.thumbnail}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p class="price">
+                
+                $ {{product.price}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button routerLink="/producto/{{product.id}}" mat-raised-button color="primary">Ver más</button>
+            </mat-card-actions>
+          </mat-card>
+  </div>
+
+</div>

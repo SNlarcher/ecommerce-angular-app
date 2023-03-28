@@ -1,0 +1,36 @@
+<div class="page-container">
+    <div class="page-container2">
+        <div class="title-container">
+            <h1>{{product?.title}}</h1>
+        </div>
+        
+        <div class="img-container">
+            <img *ngFor="let picture of product?.pictures" src="{{picture.url}}" alt="">
+        </div>
+
+        <div class="attr-container">
+            <div *ngFor="let attribute of product?.attributes">
+                <p id="attr-p" *ngIf="attribute.values[0].name">
+                    {{attribute.name}}: {{attribute.values[0].name}} 
+                </p>
+            </div>
+        </div>
+
+        <div class="price-container">
+            <p>$ {{product?.price}}</p>        
+        </div>
+        
+        <div class="text-container">
+            <p>{{product?.plain_text}}</p>
+        </div>
+
+        <div class="info-container">
+            <p><strong>{{product?.warranty}}</strong></p>
+            <p><strong>Id: </strong>{{product?.id}}</p>
+            <p><strong>Condición: </strong>{{product?.condition}}</p>
+            <p><strong>Vendidos: </strong>{{product?.sold_quantity}}</p>
+            <p><strong>Stock: </strong>{{product?.available_quantity}}</p>
+        </div>
+
+    </div>
+</div>

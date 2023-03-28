@@ -1,0 +1,10 @@
+span{
+    margin: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+mat-toolbar{
+    width: 100vw;
+    display: block;
+}
